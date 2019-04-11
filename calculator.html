@@ -6,42 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>According to my Calculations</title>
+  <style>
+
+  .displayWindow{
+
+    padding-top: calc((100% / 4) - 2px);
+    border: 1px solid black;
+    cursor: pointer;
+    width: 350px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 30px;
+  }
+
+  .container{
+    display: flex;
+    flex-flow: row wrap;
+    width: 30%;
+    margin: auto;
+  }
+
+  .buttonDiv{
+    flex-basis: calc((85%/ 4) - 2px);
+    padding-top: calc((100% / 4) - 2px);
+    border: 1px solid black;
+    cursor: pointer;
+    width: 70px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 30px;
+
+
+  }
+
+  .numColor{
+  background-color: blue;
+
+  }
+
+  .opColor{
+    background-color: red
+  }
+
+  .emptyDiv{
+    background-color: white;
+  }
+
+
+
+  </style>
+
+
+
+
+
+
 </head>
 
 
+
 <body>
-    <div class="display">0</div>
     <div class="container">
-        <div class="" id="clear" value="">C</div>
-        <div class="" id="clearEverything" value="">CE</div>
-        <div class="" id="divide" value="">%</div>
-        <div class="" id="7" value="">7</div>
-        <div class="" id="" value="">8</div>
-        <div class="" id="" value="">9</div>
-        <div class="" id="" value="">*</div>
-        <div class="" id="" value="">4</div>
-        <div class="" id="" value="">5</div>
-        <div class="" id="" value="">6</div>
-        <div class="" id="" value="">-</div>
-        <div class="" id="" value="">1</div>
-        <div class="" id="" value="">2</div>
-        <div class="" id="" value="">3</div>
-        <div class="" id="" value="">+</div>
-        <div class="" id="" value=""></div>
-        <div class="" id="" value=""></div>
-        <div class="" id="" value=""></div>
-        <div class="" id="" value=""></div>
-        <div class="" id="" value=""></div>
-        <div class="" id="" value=""></div>
-        <div class="" id="" value=""></div>
-        <div class="" id="" value=""></div>
-        <div class="" id="" value=""></div>
+        <div class="displayWindow" id="display"></div>
+        <button class="buttonDiv clearColor" id="clearAll" value="">C</button>
+        <button class="buttonDiv clearColor" id="clearEntry" value="">CE</button>
+        <button class="num buttonDiv emptyDiv" id="" value=""></button>
+        <button class="buttonDiv operator opColor" id="divide" value="divide">%</button>
+        <button class="num buttonDiv numColor" id="" value="7">7</button>
+        <button class="num buttonDiv numColor" id="" value="8">8</button>
+        <button class="num buttonDiv numColor" id="" value="9">9</button>
+        <button class="operator buttonDiv opColor" id="times" value="times">*</button>
+        <button class="num buttonDiv numColor" id="" value="4">4</button>
+        <button class="num buttonDiv numColor" id="" value="5">5</button>
+        <button class="num buttonDiv numColor" id="" value="6">6</button>
+        <button class="buttonDiv operator opColor" id="minus" value="minus">-</button>
+        <button class="num buttonDiv numColor" id="" value="1">1</button>
+        <button class="num buttonDiv numColor" id="" value="2">2</button>
+        <button class="num buttonDiv numColor" id="" value="3">3</button>
+        <button class="buttonDiv operator opColor" id="plus" value="plus">+</button>
+        <button class="buttonDiv emptyDiv" id="" value=""></button>
+        <button class="num buttonDiv numColor" id="" value="0">0</button>
+        <button class="buttonDiv emptyDiv" id="" value=""></button>
+        <button class="buttonDiv opColor" id="equals" value="equals">=</button>
 
-     
 
-    
     </div>
+<script src="./calculator.js">
 
+</script>
 </body>
 
 </html>
