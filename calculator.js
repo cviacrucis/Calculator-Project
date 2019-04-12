@@ -9,10 +9,10 @@ var num7 = document.getElementById('7')
 var num8 = document.getElementById('8')
 var num9 = document.getElementById('9')
 
-var currentNum
-var savedNum
-var myOperator
-var lastEquation
+var currentNum = "";
+var savedNum = "";
+var myOperator = "";
+var lastEquation = "";
 
 //CLEAR ALL function (CE)
 document.querySelector('#clearAll').addEventListener('click', function(){
@@ -22,10 +22,9 @@ document.querySelector('#clearAll').addEventListener('click', function(){
   clear();
 })
 
-//CLEAR LAST entry "CE" function 
+//CLEAR LAST entry "CE" function
 document.querySelector('#clearEntry').addEventListener('click', function(){
   currentNum = "";
-  myOperator = "";
   clear();
 })
 
@@ -39,6 +38,7 @@ for(i=0; i<userNumber.length; i++){
     var value = parseInt(val.target.value);
     currentNum += value;
     toDisplay(value);
+    console.log(currentNum);
   })
   }
 
@@ -53,10 +53,8 @@ for(i=0; i<userOperator.length; i++){
   userOperator[i].addEventListener('click', function(val){
     var value = val.target.value;
     myOperator = value;
-    console.log(myOperator)
     savedNum = currentNum;
-    console.log(typeof savedNum);
-    currentNum = 0;
+    currentNum = "";
     clear();
   })
 }
@@ -69,27 +67,22 @@ document.getElementById('equals').addEventListener('click', function(){
     switch(operator){
       case "plus":
       console.log(savedNum, currentNum);
-      answer = savedNum + currentNum;
       break;
 
       case "minus":
       answer = savedNum - currentNum;
-      console.log(savedNum, currentNum, answer)
       break;
 
       case "times":
       answer = savedNum * currentNum;
-      console.log(answer)
       break;
 
       case "divide":
       answer = savedNum / currentNum;
-      console.log(answer)
       break;
 
       default:
-        answer =currentNum
-        console.log(answer)
+        answer = currentNum
     }
     clear();
     document.querySelector('#display').innerText = answer;
@@ -97,10 +90,7 @@ document.getElementById('equals').addEventListener('click', function(){
 })
 
 
-
-
-//computation
-
+//Clear display
 function clear(){
   document.querySelector('#display').innerText = "";
 }
