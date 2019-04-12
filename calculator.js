@@ -9,7 +9,7 @@ var num7 = document.getElementById('7')
 var num8 = document.getElementById('8')
 var num9 = document.getElementById('9')
 
-var currentNum
+var currentNum = 0;
 var savedNum
 var myOperator
 var lastEquation
@@ -54,6 +54,7 @@ for(i=0; i<userOperator.length; i++){
     var value = val.target.value;
     myOperator = value;
     console.log(myOperator)
+    console.log(currentNum);
     savedNum = currentNum;
     console.log(typeof savedNum);
     currentNum = 0;
@@ -69,7 +70,7 @@ document.getElementById('equals').addEventListener('click', function(){
     switch(operator){
       case "plus":
       console.log(savedNum, currentNum);
-      answer = savedNum + currentNum;
+      answer = parseInt(savedNum) + parseInt(currentNum);
       break;
 
       case "minus":
