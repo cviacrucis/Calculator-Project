@@ -30,6 +30,7 @@ for(i=0; i<userNumber.length; i++){
     console.log(currentNum)
   }
 })
+}
 
 //adds event listener to operator buttons and stores it in a var
 var userOperator = document.querySelectorAll('.operator');
