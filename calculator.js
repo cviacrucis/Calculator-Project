@@ -15,33 +15,32 @@ var myOperator
 
 //gets number buttons and add listener
 var userNumber = document.getElementsByClassName('num')
-// console.log(typeof userNumber);
-
 for(i=0; i<userNumber.length; i++){
-  // console.log(userNumber[i]);
   userNumber[i].addEventListener('click', function(val){
     val.target.value;
     var value = parseInt(val.target.value);
-
     toDisplay(value);
+    var value = value;
+    console.log(value);
+    if(currentNum >= 1){
+      currentNum += value;
+      console.log(currentNum)
+    } else{
     currentNum = value;
+    console.log(currentNum)
+  }
+})
 
-  })
-}
-
+//adds event listener to operator buttons and stores it in a var
 var userOperator = document.querySelectorAll('.operator');
 for(i=0; i<userOperator.length; i++){
-  // console.log(userOperator[i]);
   userOperator[i].addEventListener('click', function(val){
     var value = val.target.value;
     myOperator = value;
-    console.log(value, myOperator)
     savedNum = currentNum;
     currentNum = 0;
-
   })
 }
-
 
 //user clicks = and js computes and puts on display
 document.getElementById('equals').addEventListener('click', function(){
@@ -73,7 +72,6 @@ document.getElementById('equals').addEventListener('click', function(){
     }
     clear();
     document.querySelector('#display').innerText = answer;
-
 })
 
 //add number to display
@@ -81,23 +79,6 @@ function toDisplay(value){
   document.querySelector('#display').innerText = value;
   }
 
-
-//computation
-
 function clear(){
   document.querySelector('#display').innerText = "";
-}
-
-
-//get user number input
-//add to equation ***
-//display in window
-//get operator
-//add to equation ***
-//get second number input
-//add to equation ***
-//clear first number and display second number
-//when user enters =
-//compute all inputs
-//display result
-//clear all
+  }
