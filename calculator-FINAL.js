@@ -16,6 +16,7 @@ document.querySelector('#clearEntry').addEventListener('click', function(){
   clear();
 })
 
+
 //gets number buttons and add listener
 var userNumber = document.getElementsByClassName('num')
 
@@ -40,6 +41,7 @@ var userOperator = document.querySelectorAll('.operator');
 for(i=0; i<userOperator.length; i++){
   userOperator[i].addEventListener('click', function(val){
     var opeSign = val.target.innerText;
+    console.log(opeSign);
     clear();
     toDisplay(opeSign);
     var value = val.target.value;
@@ -49,6 +51,7 @@ for(i=0; i<userOperator.length; i++){
     // clear();
   })
 }
+
 
 
 //user clicks = and js computes and puts on display
@@ -81,6 +84,7 @@ document.getElementById('equals').addEventListener('click', function(){
     currentNum = answer;
     myOperator = "";
 })
+
 
 //Clear display
 function clear(){
