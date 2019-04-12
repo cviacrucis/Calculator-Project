@@ -13,22 +13,44 @@ var currentNum
 var savedNum
 var myOperator
 
+//CLEAR ALL function
+document.querySelector('#clearAll').addEventListener('click', function(){
+  currentNum = "";
+  savedNum = "";
+  myOperator = "";
+  clear();
+})
+
+//CLEAR LAST entry "CE" function
+
+
 //gets number buttons and add listener
 var userNumber = document.getElementsByClassName('num')
-// console.log(typeof userNumber);
 
 for(i=0; i<userNumber.length; i++){
-  // console.log(userNumber[i]);
   userNumber[i].addEventListener('click', function(val){
     val.target.value;
     var value = parseInt(val.target.value);
-
     toDisplay(value);
     currentNum = value;
-
   })
-}
+  }
 
+// if(currentNum = 0){
+//   currentNum = value;
+//   toDisplay(value);
+// } else{
+//   currentNum + value;
+//   console.log("yikes ", currentNum);
+//   toDisplay(currentNum);
+
+
+//add number to display
+function toDisplay(value){
+  document.querySelector('#display').innerText = value;
+  }
+
+// operator button action
 var userOperator = document.querySelectorAll('.operator');
 for(i=0; i<userOperator.length; i++){
   // console.log(userOperator[i]);
@@ -38,9 +60,9 @@ for(i=0; i<userOperator.length; i++){
     console.log(value, myOperator)
     savedNum = currentNum;
     currentNum = 0;
-
   })
 }
+
 
 
 //user clicks = and js computes and puts on display
@@ -76,10 +98,7 @@ document.getElementById('equals').addEventListener('click', function(){
 
 })
 
-//add number to display
-function toDisplay(value){
-  document.querySelector('#display').innerText = value;
-  }
+
 
 
 //computation
