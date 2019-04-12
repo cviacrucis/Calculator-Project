@@ -12,6 +12,7 @@ var num9 = document.getElementById('9')
 var currentNum
 var savedNum
 var myOperator
+var lastEquation
 
 //CLEAR ALL function
 document.querySelector('#clearAll').addEventListener('click', function(){
@@ -31,35 +32,27 @@ for(i=0; i<userNumber.length; i++){
   userNumber[i].addEventListener('click', function(val){
     val.target.value;
     var value = parseInt(val.target.value);
+    currentNum += value;
     toDisplay(value);
-    currentNum = value;
   })
   }
 
-// if(currentNum = 0){
-//   currentNum = value;
-//   toDisplay(value);
-// } else{
-//   currentNum + value;
-//   console.log("yikes ", currentNum);
-//   toDisplay(currentNum);
-
-
 //add number to display
 function toDisplay(value){
-  document.querySelector('#display').innerText = value;
-  }
+  document.querySelector('#display').innerText += value;
+}
 
 // operator button action
 var userOperator = document.querySelectorAll('.operator');
 for(i=0; i<userOperator.length; i++){
-  // console.log(userOperator[i]);
   userOperator[i].addEventListener('click', function(val){
     var value = val.target.value;
     myOperator = value;
-    console.log(value, myOperator)
+    console.log(myOperator)
     savedNum = currentNum;
+    console.log(typeof savedNum);
     currentNum = 0;
+    clear();
   })
 }
 
@@ -76,7 +69,7 @@ document.getElementById('equals').addEventListener('click', function(){
 
       case "minus":
       answer = savedNum - currentNum;
-      console.log(answer)
+      console.log(savedNum, currentNum, answer)
       break;
 
       case "times":
@@ -95,7 +88,7 @@ document.getElementById('equals').addEventListener('click', function(){
     }
     clear();
     document.querySelector('#display').innerText = answer;
-
+    lastEquation = answer;
 })
 
 
