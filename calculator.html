@@ -8,40 +8,54 @@
     <title>According to my Calculations</title>
   <style>
 
-  .displayWindow{
+*{
+  box-sizing: border-box;
+  margin: 0;
+  font-family: sans-serif;
+}
 
-    padding-top: calc((100% / 4) - 2px);
-    border: 1px solid black;
+  .displayWindow{
+    padding: 15px;
+    border: 4px solid grey;
     cursor: pointer;
-    width: 350px;
-    text-align: center;
+    width: 425px;
+    height: 75px;
+    text-align: right;
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 40px;
+    margin: auto;
+    border-radius: 10px;
   }
 
   .container{
     display: flex;
     flex-flow: row wrap;
-    width: 30%;
+    width: 320px;
     margin: auto;
+    margin-top: 75px;
+  }
+
+  .mainCalc{
+    width: 400px;
   }
 
   .buttonDiv{
-    flex-basis: calc((85%/ 4) - 2px);
-    padding-top: calc((100% / 4) - 2px);
-    border: 1px solid black;
+    /* flex-basis: calc((85%/ 4) - 2px); */
+    /* padding-top: calc((100% / 4) - 2px); */
+    width: 77px;
+    height: 75px;
+    border: 1px solid white;
     cursor: pointer;
-    width: 70px;
     text-align: center;
     font-weight: bolder;
     font-size: 30px;
-
-
+    color: white;
+    border-radius: 30%;
+    margin-top: 5px;
   }
 
   .numColor{
   background-color: blue;
-
   }
 
   .opColor{
@@ -52,22 +66,20 @@
     background-color: white;
   }
 
-
+  .clearColor{
+    background-color: grey;
+  }
 
   </style>
 
 
-
-
-
-
 </head>
-
-
-
 <body>
+  <div>
     <div class="container">
         <div class="displayWindow" id="display"></div>
+    <div/>
+    <div class="mainCalc">
         <button class="buttonDiv clearColor" id="clearAll" value="">C</button>
         <button class="buttonDiv clearColor" id="clearEntry" value="">CE</button>
         <button class="num buttonDiv emptyDiv" id="" value=""></button>
@@ -88,9 +100,8 @@
         <button class="num buttonDiv numColor" id="" value="0">0</button>
         <button class="buttonDiv emptyDiv" id="" value=""></button>
         <button class="buttonDiv opColor" id="equals" value="equals">=</button>
-
-
     </div>
+  </div>
 <script src="./calculator.js">
 
 </script>
