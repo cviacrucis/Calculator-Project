@@ -14,7 +14,7 @@ var savedNum
 var myOperator
 var lastEquation
 
-//CLEAR ALL function
+//CLEAR ALL function (CE)
 document.querySelector('#clearAll').addEventListener('click', function(){
   currentNum = "";
   savedNum = "";
@@ -22,7 +22,12 @@ document.querySelector('#clearAll').addEventListener('click', function(){
   clear();
 })
 
-//CLEAR LAST entry "CE" function
+//CLEAR LAST entry "CE" function 
+document.querySelector('#clearEntry').addEventListener('click', function(){
+  currentNum = "";
+  myOperator = "";
+  clear();
+})
 
 
 //gets number buttons and add listener
@@ -112,4 +117,3 @@ function clear(){
 //when user enters =
 //compute all inputs
 //display result
-//clear all
