@@ -14,7 +14,7 @@ var savedNum
 var myOperator
 var lastEquation
 
-//CLEAR ALL function (CE)
+//CLEAR ALL function (CE)      
 document.querySelector('#clearAll').addEventListener('click', function(){
   currentNum = "";
   savedNum = "";
@@ -22,7 +22,7 @@ document.querySelector('#clearAll').addEventListener('click', function(){
   clear();
 })
 
-//CLEAR LAST entry "CE" function 
+//CLEAR LAST entry "CE" function       
 document.querySelector('#clearEntry').addEventListener('click', function(){
   currentNum = "";
   myOperator = "";
@@ -32,13 +32,13 @@ document.querySelector('#clearEntry').addEventListener('click', function(){
 
 //gets number buttons and add listener
 var userNumber = document.getElementsByClassName('num')
-
-for(i=0; i<userNumber.length; i++){
+      
+for(i=0; i<userNumber.length; i++){      
   userNumber[i].addEventListener('click', function(val){
     val.target.value;
-    var value = parseInt(val.target.value);
+    var value = val.target.value;
     currentNum += value;
-    toDisplay(value);
+  toDisplay(value);
   })
   }
 
@@ -53,68 +53,50 @@ for(i=0; i<userOperator.length; i++){
   userOperator[i].addEventListener('click', function(val){
     var value = val.target.value;
     myOperator = value;
-    console.log(myOperator)
-    console.log(currentNum);
     savedNum = currentNum;
-    console.log(typeof savedNum);
     currentNum = 0;
-    clear();
+    clear( ) ;   
   })
 }
+    
 
 
 
 //user clicks = and js computes and puts on display
 document.getElementById('equals').addEventListener('click', function(){
-    var operator = myOperator;
+  var operator = myOperator;
     switch(operator){
+      
       case "plus":
-      console.log(savedNum, currentNum);
-      answer = parseInt(savedNum) + parseInt(currentNum);
-      break;
+        answer = parseInt(savedNum) + parseInt(currentNum);
+        break;
 
-      case "minus":
-      answer = savedNum - currentNum;
-      console.log(savedNum, currentNum, answer)
-      break;
+      case  "minus":
+        answer = parseInt(savedNum) - parseInt(currentNum);
+        console.log(answer);
+        break;
 
       case "times":
-      answer = savedNum * currentNum;
-      console.log(answer)
-      break;
+        answer = parseInt(savedNum) * parseInt(currentNum);
+        console.log(answer);
+        break;
 
       case "divide":
-      answer = savedNum / currentNum;
-      console.log(answer)
-      break;
+        answer = parseInt(savedNum) / parseInt(currentNum);
+        console.log(answer);
+        break;
 
       default:
-        answer =currentNum
+        answer = parseInt(currentNum);
         console.log(answer)
     }
-    clear();
-    document.querySelector('#display').innerText = answer;
-    lastEquation = answer;
+      clear();
+      document.querySelector('#display').innerText = answer;
+      Equation  = answer;
 })
-
-
-
 
 //computation
 
 function clear(){
   document.querySelector('#display').innerText = "";
 }
-
-
-//get user number input
-//add to equation ***
-//display in window
-//get operator
-//add to equation ***
-//get second number input
-//add to equation ***
-//clear first number and display second number
-//when user enters =
-//compute all inputs
-//display result
